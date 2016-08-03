@@ -17,7 +17,7 @@ RUN yum update -y && \
     ln -s /opt/rh/rh-ruby23/root/usr/local/bin/* /usr/bin && \
     mkdir -p /etc/fluent/plugin && \
     curl https://raw.githubusercontent.com/tech-angels/fluent-plugin-gelf/master/lib/fluent/plugin/out_gelf.rb -o /etc/fluent/plugin/out_gelf.rb && \
-    yum remove -y rh-ruby23-ruby-devel-2.3.0-60 glibc-devel-2.17-106.el7_2.8 libstdc++-devel-4.8.5-4.el7.x86_64  make gcc gcc-c++ bzip2 rh-ruby23-ruby-devel \
+    yum remove -y rh-ruby23-ruby-devel-2.3.0-60 glibc-devel-2.17-106.el7_2.8 libstdc++-devel-4.8.5-4.el7.x86_64  make gcc gcc-c++ bzip2 rh-ruby23-ruby-devel && \
     yum clean all
 
 ADD fluent.conf /etc/fluent/fluent.conf
